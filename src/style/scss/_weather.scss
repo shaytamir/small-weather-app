@@ -1,0 +1,240 @@
+$fz-main: clamp(0.7rem, 2.5vw, 1.2rem);
+$fz-second: clamp(0.6em, 2.5vw, 0.9em);
+
+$fc-main: #0f0f0f;
+$fc-active: #fff100;
+.active {
+  background-color: $fc-active;
+}
+.middle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+#weather_div {
+  margin-top: 10px;
+  text-align: center;
+
+  h1 {
+    text-align: center;
+    font-size: 7vw;
+    font-size: clamp(0.7em, 7vw, 2em);
+  }
+  #mainWeather {
+    background-color: #cbe3ef;
+    margin: 10px auto;
+    border: 1px solid #000;
+    width: clamp(200px, 100vw, 600px);
+    // height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(8, 50px);
+    grid-template-areas:
+      "city city  thisDate thisTime"
+      "temp weather_img humidity wind "
+      "temp weather_img humidity wind "
+      "chooseDate chooseDate today_btn  hours_btn "
+      "quarter quarter quarter quarter"
+      "quarter quarter quarter quarter"
+      "quarter quarter quarter quarter"
+      "chooseCity chooseCity cityBtn .";
+
+    #city {
+      grid-area: city;
+      font-size: 14px;
+      font-size: $fz-main;
+      font-weight: 600;
+      text-align: left;
+      margin-top: 15px;
+      margin-left: 10%;
+      padding-left: 6.5%;
+    }
+    #chooseCity {
+      grid-area: chooseCity;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      justify-content: center;
+      align-items: center;
+      input {
+        background-color: #f2f8fb;
+        text-indent: clamp(1px, 1vw, 15px);
+        font-size: clamp(8px, 1.8vw, 16px);
+        width: 80%;
+        // width: clamp(100px, 80%, 150px);
+        height: 30px;
+      }
+    }
+    #btn_div {
+      grid-area: cityBtn;
+      position: relative;
+      #city_btn {
+        height: 30px;
+        width: 100%;
+        font-size: $fz-second;
+        @extend .middle;
+      }
+    }
+    #choose_date {
+      grid-area: chooseDate;
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      input {
+        background-color: #f2f8fb;
+        text-indent: clamp(1px, 0.9vw, 15px);
+        font-size: clamp(5px, 1.8vw, 16px);
+        width: 80%;
+        height: 30px;
+      }
+    }
+
+    .infoSpan {
+      width: 80px;
+      height: 50%;
+      @extend .middle;
+      font-size: $fz-main;
+      // color: $fc-main;
+      // font-weight: 600;
+    }
+    .forDate {
+      font-size: clamp(0.4rem, 2.2vw, 1rem);
+      position: relative;
+
+      div {
+        width: 100px;
+        height: 35%;
+        @extend .middle;
+      }
+    }
+    #this_date {
+      grid-area: thisDate;
+      @extend .forDate;
+    }
+    #this_time {
+      grid-area: thisTime;
+      @extend .forDate;
+    }
+    #temperature {
+      grid-area: temp;
+      position: relative;
+      span {
+        @extend .infoSpan;
+      }
+    }
+    #weather_img {
+      grid-area: weather_img;
+      position: relative;
+      img {
+        @extend .middle;
+      }
+    }
+    #humidity {
+      grid-area: humidity;
+      position: relative;
+      span {
+        @extend .infoSpan;
+      }
+    }
+    #wind {
+      grid-area: wind;
+      position: relative;
+      span.info {
+        @extend .infoSpan;
+        span.kph {
+          // position: absolute;
+          // right: 0;
+          font-size: 0.5em;
+        }
+      }
+    }
+    #today_btn {
+      grid-area: today_btn;
+      font-size: $fz-second;
+      margin-top: 10px;
+    }
+    #hours_btn {
+      grid-area: hours_btn;
+      font-size: $fz-second;
+      margin-top: 10px;
+    }
+
+    .forAllTimes {
+      padding-top: 10px;
+      border-right: 1px solid #000;
+      // border-top: 1px solid #000;
+      // border-bottom: 1px solid #000;
+      font-size: $fz-main;
+    }
+    .quarter_div {
+      grid-area: quarter;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: repeat(3, 50px);
+      grid-template-areas:
+        "morn noon eve night"
+        "morn noon eve night"
+        "morn noon eve night";
+      #morn {
+        grid-area: morn;
+        @extend .forAllTimes;
+      }
+      #noon {
+        grid-area: noon;
+        @extend .forAllTimes;
+      }
+      #eve {
+        grid-area: eve;
+        @extend .forAllTimes;
+      }
+      #night {
+        grid-area: night;
+        padding-top: 10px;
+        // border-top: 1px solid #000;
+        font-size: $fz-main;
+        // border-bottom: 1px solid #000;
+      }
+    }
+    .hours_div {
+      grid-area: quarter;
+      border-top: 1px solid #000;
+      display: grid;
+      grid-template-columns: repeat(12, 8.35%);
+      grid-template-rows: repeat(2, 75px);
+      gap: 0;
+      font-size: clamp(6px, 3vw, 14px);
+      .hours {
+        // padding: 10px, 0;
+        // border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 7.5px 0;
+        position: relative;
+        img {
+          width: 50%;
+          @extend .middle;
+          // padding: 10px;
+        }
+        p {
+          font-size: $fz-second;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}

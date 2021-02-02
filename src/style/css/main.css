@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Pattaya&family=Roboto&display=swa");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #551a8b;
+}
+
+.middle, #weather_div #mainWeather #btn_div #city_btn, #weather_div #mainWeather .infoSpan, #weather_div #mainWeather #temperature span, #weather_div #mainWeather #humidity span, #weather_div #mainWeather #wind span.info, #weather_div #mainWeather .forDate div, #weather_div #mainWeather #this_date div, #weather_div #mainWeather #this_time div, #weather_div #mainWeather #weather_img img, #weather_div #mainWeather .hours_div .hours img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+.active {
+  background-color: #fff100;
+}
+
+.middle, #weather_div #mainWeather #btn_div #city_btn, #weather_div #mainWeather .infoSpan, #weather_div #mainWeather #temperature span, #weather_div #mainWeather #humidity span, #weather_div #mainWeather #wind span.info, #weather_div #mainWeather .forDate div, #weather_div #mainWeather #this_date div, #weather_div #mainWeather #this_time div, #weather_div #mainWeather #weather_img img, #weather_div #mainWeather .hours_div .hours img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+#weather_div {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#weather_div h1 {
+  text-align: center;
+  font-size: 7vw;
+  font-size: clamp(0.7em, 7vw, 2em);
+}
+
+#weather_div #mainWeather {
+  background-color: #cbe3ef;
+  margin: 10px auto;
+  border: 1px solid #000;
+  width: clamp(200px, 100vw, 600px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+  -ms-grid-rows: (50px)[8];
+      grid-template-rows: repeat(8, 50px);
+      grid-template-areas: "city city  thisDate thisTime" "temp weather_img humidity wind " "temp weather_img humidity wind " "chooseDate chooseDate today_btn  hours_btn " "quarter quarter quarter quarter" "quarter quarter quarter quarter" "quarter quarter quarter quarter" "chooseCity chooseCity cityBtn .";
+}
+
+#weather_div #mainWeather #city {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: city;
+  font-size: 14px;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  text-align: left;
+  margin-top: 15px;
+  margin-left: 10%;
+  padding-left: 6.5%;
+}
+
+#weather_div #mainWeather #chooseCity {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: chooseCity;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#weather_div #mainWeather #chooseCity input {
+  background-color: #f2f8fb;
+  text-indent: clamp(1px, 1vw, 15px);
+  font-size: clamp(8px, 1.8vw, 16px);
+  width: 80%;
+  height: 30px;
+}
+
+#weather_div #mainWeather #btn_div {
+  -ms-grid-row: 8;
+  -ms-grid-column: 3;
+  grid-area: cityBtn;
+  position: relative;
+}
+
+#weather_div #mainWeather #btn_div #city_btn {
+  height: 30px;
+  width: 100%;
+  font-size: clamp(0.6em, 2.5vw, 0.9em);
+}
+
+#weather_div #mainWeather #choose_date {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: chooseDate;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#weather_div #mainWeather #choose_date input {
+  background-color: #f2f8fb;
+  text-indent: clamp(1px, 0.9vw, 15px);
+  font-size: clamp(5px, 1.8vw, 16px);
+  width: 80%;
+  height: 30px;
+}
+
+#weather_div #mainWeather .infoSpan, #weather_div #mainWeather #temperature span, #weather_div #mainWeather #humidity span, #weather_div #mainWeather #wind span.info {
+  width: 80px;
+  height: 50%;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+}
+
+#weather_div #mainWeather .forDate, #weather_div #mainWeather #this_date, #weather_div #mainWeather #this_time {
+  font-size: clamp(0.4rem, 2.2vw, 1rem);
+  position: relative;
+}
+
+#weather_div #mainWeather .forDate div, #weather_div #mainWeather #this_date div, #weather_div #mainWeather #this_time div {
+  width: 100px;
+  height: 35%;
+}
+
+#weather_div #mainWeather #this_date {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: thisDate;
+}
+
+#weather_div #mainWeather #this_time {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: thisTime;
+}
+
+#weather_div #mainWeather #temperature {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: temp;
+  position: relative;
+}
+
+#weather_div #mainWeather #weather_img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: weather_img;
+  position: relative;
+}
+
+#weather_div #mainWeather #humidity {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: humidity;
+  position: relative;
+}
+
+#weather_div #mainWeather #wind {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: wind;
+  position: relative;
+}
+
+#weather_div #mainWeather #wind span.info span.kph {
+  font-size: 0.5em;
+}
+
+#weather_div #mainWeather #today_btn {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: today_btn;
+  font-size: clamp(0.6em, 2.5vw, 0.9em);
+  margin-top: 10px;
+}
+
+#weather_div #mainWeather #hours_btn {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: hours_btn;
+  font-size: clamp(0.6em, 2.5vw, 0.9em);
+  margin-top: 10px;
+}
+
+#weather_div #mainWeather .forAllTimes, #weather_div #mainWeather .quarter_div #morn, #weather_div #mainWeather .quarter_div #noon, #weather_div #mainWeather .quarter_div #eve {
+  padding-top: 10px;
+  border-right: 1px solid #000;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+}
+
+#weather_div #mainWeather .quarter_div {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: quarter;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+  -ms-grid-rows: (50px)[3];
+      grid-template-rows: repeat(3, 50px);
+      grid-template-areas: "morn noon eve night" "morn noon eve night" "morn noon eve night";
+}
+
+#weather_div #mainWeather .quarter_div #morn {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: morn;
+}
+
+#weather_div #mainWeather .quarter_div #noon {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: noon;
+}
+
+#weather_div #mainWeather .quarter_div #eve {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  grid-area: eve;
+}
+
+#weather_div #mainWeather .quarter_div #night {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 4;
+  grid-area: night;
+  padding-top: 10px;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+}
+
+#weather_div #mainWeather .hours_div {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: quarter;
+  border-top: 1px solid #000;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (8.35%)[12];
+      grid-template-columns: repeat(12, 8.35%);
+  -ms-grid-rows: (75px)[2];
+      grid-template-rows: repeat(2, 75px);
+  gap: 0;
+  font-size: clamp(6px, 3vw, 14px);
+}
+
+#weather_div #mainWeather .hours_div .hours {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 7.5px 0;
+  position: relative;
+}
+
+#weather_div #mainWeather .hours_div .hours img {
+  width: 50%;
+}
+
+#weather_div #mainWeather .hours_div .hours p {
+  font-size: clamp(0.6em, 2.5vw, 0.9em);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Pattaya&family=Roboto&display=swa");
+$fc-trans: #1c00ff00;
+$font-roboto: "Roboto", sans-serif;
+$fc-purple: #551a8b;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: $font-roboto;
+  color: $fc-purple;
+}
+.middle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+}
+
+// #nav_btn {
+//   color: black;
+//   text-decoration: none;
+
+//   :hover,
+//   :visited,
+//   :link,
+//   :active {
+//     text-decoration: none;
+//     color: black;
+//     border: none;
+//   }
+// }
+// a.a {
+//   color: black;
+//   text-decoration: none;
+
+//   :hover,
+//   :visited,
+//   :link,
+//   :active {
+//     text-decoration: none;
+//     color: black;
+//   }
+// }
