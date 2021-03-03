@@ -4,7 +4,7 @@ import getDate from "../services/dateService.js";
 let newDate = getDate.dateToday();
 /*   current and Forecast Weather   */
 export async function fetchWeather(here = "Tel Aviv", time = newDate) {
-  const urlWeather = "http://api.weatherapi.com/v1/",
+  const urlWeather = "https://api.weatherapi.com/v1/",
     what = "forecast.json",
     where = "&q=" + here,
     Key = "?key=75f815f1dd42417389c182022200310";
