@@ -9,7 +9,7 @@ allows changing the positios search value.
 Js-Vanila | Ajax -  project.
 ```
 ### Live Demo:
-https://shaytamir.github.io/small-weather-app
+https://shaytamir.github.io/weather-applet/
 ```
 (if link dosn't open, please pouse AddBlock for the page)
 ```
